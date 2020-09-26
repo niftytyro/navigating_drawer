@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+/// This is the wrapping widget with an initial
+/// Drawer Page.
 class NavigatingDrawer extends StatelessWidget {
   NavigatingDrawer({
     this.elevation = 16.0,
@@ -25,6 +27,7 @@ class NavigatingDrawer extends StatelessWidget {
   }
 }
 
+/// This is the Drawer Page. Acts like a Material Page.
 class NavigatingDrawerPage extends StatelessWidget {
   NavigatingDrawerPage({
     @required this.body,
@@ -48,6 +51,7 @@ class NavigatingDrawerPage extends StatelessWidget {
   }
 }
 
+/// This is a Provided ListView with Drawer Item children.
 class NavigatingDrawerList extends StatelessWidget {
   NavigatingDrawerList({@required this.children});
 
@@ -61,6 +65,9 @@ class NavigatingDrawerList extends StatelessWidget {
   }
 }
 
+/// Drawer List Item which implements a ListItem along
+/// with custom onTap implementation for performing the
+/// real magic of this package.
 class NavigatingDrawerListItem extends StatelessWidget {
   const NavigatingDrawerListItem({
     Key key,
