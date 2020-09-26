@@ -1,6 +1,6 @@
 name: navigating_drawer
 description: A drawer with navigation inside the drawer. Push and Pop Drawer Pages.
-version: 1.2.0
+version: 1.3.0
 homepage: https://github.com/udasitharani/navigating_drawer
 
 environment:

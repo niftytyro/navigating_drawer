@@ -8,12 +8,14 @@ class NavigatingDrawer extends StatelessWidget {
     this.semanticLabel,
     this.body,
     this.backgroundColor,
+    this.theme,
   });
 
   final double elevation;
   final String semanticLabel;
   final Widget body;
   final Color backgroundColor;
+  final ThemeData theme;
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +23,7 @@ class NavigatingDrawer extends StatelessWidget {
       elevation: elevation,
       semanticLabel: semanticLabel,
       child: MaterialApp(
+        theme: theme,
         home: Scaffold(
           backgroundColor: backgroundColor,
           body: body,
