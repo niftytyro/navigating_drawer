@@ -1,14 +1,40 @@
 # navigating_drawer
 
-A new Flutter package project.
+A Flutter Package to enable navigating inside drawers easy.
 
-## Getting Started
+![Alt Text](https://drive.google.com/file/d/1e0IsHvb1rzlZamfASIlg1Y76DjoHrS79/view)
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+## Usage
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+```dart
+drawer: NavigatingDrawer(
+  body: NavigatingDrawerList(
+    children: [
+      NavigatingDrawerListItem(
+        title: Text('Item 1'),
+        pushPage: NavigatingDrawerPage(
+          body: NavigatingDrawerList(
+            children: [
+              NavigatingDrawerListItem(
+                title: Text('SubItem 1'),
+              ),
+              NavigatingDrawerListItem(
+                title: Text('SubItem 2'),
+              ),
+              NavigatingDrawerListItem(
+                title: Text('SubItem 3'),
+              ),
+            ],
+          ),
+        ),
+      ),
+      NavigatingDrawerListItem(
+        title: Text('Item 2'),
+      ),
+      NavigatingDrawerListItem(
+        title: Text('Item 3'),
+      ),
+    ],
+  ),
+),
+```
