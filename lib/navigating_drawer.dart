@@ -117,8 +117,22 @@ class NavigatingDrawerListItem extends StatelessWidget {
       onLongPress: onLongPress,
       onTap: () {
         if (pushPage != null) {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => pushPage));
+          Navigator.of(context).push(
+            PageRouteBuilder(
+              pageBuilder: (context, animation, secondaryAnimation) {
+                return pushPage;
+              },
+              transitionsBuilder:
+                  (context, animation, secondaryAnimation, child) {
+                return SlideTransition(
+                  position: Tween<Offset>(
+                          begin: const Offset(-1, 0), end: Offset.zero)
+                      .animate(animation),
+                  child: child,
+                );
+              },
+            ),
+          );
         }
         if (onTap != null) {
           onTap();

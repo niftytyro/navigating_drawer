@@ -5,3 +5,7 @@
 ## [1.0.1] - 26/09/2020
 
 - Bigger Description for pub points, meh.
+
+## [1.1.0] - 26/09/2020
+
+- Added Drawer Routing Transitions.

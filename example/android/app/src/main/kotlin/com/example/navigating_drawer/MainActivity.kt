@@ -1,4 +1,4 @@
-package com.example.navigating_drawer
+package com.example.example
 
 import io.flutter.embedding.android.FlutterActivity
 
