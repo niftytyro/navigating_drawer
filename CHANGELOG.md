@@ -14,6 +14,10 @@
 
 - Added backgroundColor option to the DrawerPage.
 
-# [1.3.0] - 26/09/2020
+## [1.3.0] - 26/09/2020
 
 - Customizable Theme for Drawer.
+
+## [1.4.0] - 26/09/2020
+
+- Customizable background color for DrawerListItem

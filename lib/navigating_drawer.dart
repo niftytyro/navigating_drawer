@@ -94,6 +94,7 @@ class NavigatingDrawerListItem extends StatelessWidget {
     this.subtitle,
     this.title,
     this.trailing,
+    this.backgroundColor,
     this.pushPage,
   }) : super(key: key);
 
@@ -111,47 +112,51 @@ class NavigatingDrawerListItem extends StatelessWidget {
   final Widget subtitle;
   final Widget title;
   final Widget trailing;
+  final Color backgroundColor;
   final Widget pushPage;
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      autofocus: autofocus,
-      contentPadding: contentPadding,
-      enabled: enabled,
-      focusColor: focusColor,
-      hoverColor: hoverColor,
-      isThreeLine: isThreeLine,
-      leading: leading,
-      onLongPress: onLongPress,
-      onTap: () {
-        if (pushPage != null) {
-          Navigator.of(context).push(
-            PageRouteBuilder(
-              pageBuilder: (context, animation, secondaryAnimation) {
-                return pushPage;
-              },
-              transitionsBuilder:
-                  (context, animation, secondaryAnimation, child) {
-                return SlideTransition(
-                  position: Tween<Offset>(
-                          begin: const Offset(-1, 0), end: Offset.zero)
-                      .animate(animation),
-                  child: child,
-                );
-              },
-            ),
-          );
-        }
-        if (onTap != null) {
-          onTap();
-        }
-      },
-      selected: selected,
-      shape: shape,
-      subtitle: subtitle,
-      title: title,
-      trailing: trailing,
+    return Container(
+      color: backgroundColor,
+      child: ListTile(
+        autofocus: autofocus,
+        contentPadding: contentPadding,
+        enabled: enabled,
+        focusColor: focusColor,
+        hoverColor: hoverColor,
+        isThreeLine: isThreeLine,
+        leading: leading,
+        onLongPress: onLongPress,
+        onTap: () {
+          if (pushPage != null) {
+            Navigator.of(context).push(
+              PageRouteBuilder(
+                pageBuilder: (context, animation, secondaryAnimation) {
+                  return pushPage;
+                },
+                transitionsBuilder:
+                    (context, animation, secondaryAnimation, child) {
+                  return SlideTransition(
+                    position: Tween<Offset>(
+                            begin: const Offset(-1, 0), end: Offset.zero)
+                        .animate(animation),
+                    child: child,
+                  );
+                },
+              ),
+            );
+          }
+          if (onTap != null) {
+            onTap();
+          }
+        },
+        selected: selected,
+        shape: shape,
+        subtitle: subtitle,
+        title: title,
+        trailing: trailing,
+      ),
     );
   }
 }
