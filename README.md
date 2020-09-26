@@ -2,7 +2,7 @@
 
 A Flutter Package to enable navigating inside drawers easy.
 
-![Alt Text](https://drive.google.com/file/d/1e0IsHvb1rzlZamfASIlg1Y76DjoHrS79/view)
+![navigating_drawer](https://user-images.githubusercontent.com/56196911/94339900-41069700-001b-11eb-814d-03f9d330d85a.gif)
 
 ## Usage
 
