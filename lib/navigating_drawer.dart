@@ -7,11 +7,13 @@ class NavigatingDrawer extends StatelessWidget {
     this.elevation = 16.0,
     this.semanticLabel,
     this.body,
+    this.backgroundColor,
   });
 
   final double elevation;
   final String semanticLabel;
   final Widget body;
+  final Color backgroundColor;
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +22,7 @@ class NavigatingDrawer extends StatelessWidget {
       semanticLabel: semanticLabel,
       child: MaterialApp(
         home: Scaffold(
+          backgroundColor: backgroundColor,
           body: body,
         ),
       ),
@@ -31,13 +34,16 @@ class NavigatingDrawer extends StatelessWidget {
 class NavigatingDrawerPage extends StatelessWidget {
   NavigatingDrawerPage({
     @required this.body,
+    this.backgroundColor,
   });
 
   final Widget body;
+  final Color backgroundColor;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: backgroundColor,
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {

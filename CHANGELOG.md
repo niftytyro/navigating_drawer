@@ -9,3 +9,7 @@
 ## [1.1.0] - 26/09/2020
 
 - Added Drawer Routing Transitions.
+
+## [1.2.0] - 26/09/2020
+
+- Added backgroundColor option to the DrawerPage.
