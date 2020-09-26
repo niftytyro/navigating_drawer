@@ -1,8 +1,8 @@
 name: navigating_drawer
-description: A new Flutter package project.
-version: 0.0.1
+description: A drawer with navigation inside the drawer.
+version: 1.0.0
 author: Udasi Tharani
-homepage:
+homepage: https://github.com/udasitharani/navigating_drawer
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
