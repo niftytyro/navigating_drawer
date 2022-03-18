@@ -127,7 +127,7 @@ class NavigatingDrawerListItem extends StatelessWidget {
         hoverColor: hoverColor,
         isThreeLine: isThreeLine,
         leading: leading,
-        onLongPress: onLongPress!(),
+        onLongPress: onLongPress != null ? onLongPress!() : null,
         onTap: () {
           if (pushPage != null) {
             Navigator.of(context).push(
