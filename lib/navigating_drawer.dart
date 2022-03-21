@@ -22,10 +22,10 @@ class NavigatingDrawer extends StatelessWidget {
     return Drawer(
       elevation: elevation,
       semanticLabel: semanticLabel,
-      child: MaterialApp(
-        theme: theme,
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
+      child: Container(
+        //theme: theme,
+        //debugShowCheckedModeBanner: false,
+        child: Scaffold(
           backgroundColor: backgroundColor,
           body: body,
         ),
