@@ -24,6 +24,7 @@ class NavigatingDrawer extends StatelessWidget {
       semanticLabel: semanticLabel,
       child: MaterialApp(
         theme: theme,
+        debugShowCheckedModeBanner: false,
         home: Scaffold(
           backgroundColor: backgroundColor,
           body: body,
