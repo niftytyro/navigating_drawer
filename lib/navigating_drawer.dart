@@ -6,16 +6,16 @@ class NavigatingDrawer extends StatelessWidget {
   NavigatingDrawer({
     this.elevation = 16.0,
     this.semanticLabel,
-    this.body,
-    this.backgroundColor,
+    required this.body,
+    this.backgroundColor = Colors.black,
     this.theme,
   });
 
   final double elevation;
-  final String semanticLabel;
+  final String? semanticLabel;
   final Widget body;
   final Color backgroundColor;
-  final ThemeData theme;
+  final ThemeData? theme;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +24,7 @@ class NavigatingDrawer extends StatelessWidget {
       semanticLabel: semanticLabel,
       child: MaterialApp(
         theme: theme,
+        debugShowCheckedModeBanner: false,
         home: Scaffold(
           backgroundColor: backgroundColor,
           body: body,
@@ -36,12 +37,12 @@ class NavigatingDrawer extends StatelessWidget {
 /// This is the Drawer Page. Acts like a Material Page.
 class NavigatingDrawerPage extends StatelessWidget {
   NavigatingDrawerPage({
-    @required this.body,
+    required this.body,
     this.backgroundColor,
   });
 
   final Widget body;
-  final Color backgroundColor;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +63,7 @@ class NavigatingDrawerPage extends StatelessWidget {
 
 /// This is a Provided ListView with Drawer Item children.
 class NavigatingDrawerList extends StatelessWidget {
-  NavigatingDrawerList({@required this.children});
+  NavigatingDrawerList({required this.children});
 
   final List<NavigatingDrawerListItem> children;
 
@@ -79,7 +80,7 @@ class NavigatingDrawerList extends StatelessWidget {
 /// real magic of this package.
 class NavigatingDrawerListItem extends StatelessWidget {
   const NavigatingDrawerListItem({
-    Key key,
+    Key? key,
     this.autofocus = false,
     this.contentPadding,
     this.enabled = true,
@@ -99,21 +100,21 @@ class NavigatingDrawerListItem extends StatelessWidget {
   }) : super(key: key);
 
   final bool autofocus;
-  final EdgeInsetsGeometry contentPadding;
+  final EdgeInsetsGeometry? contentPadding;
   final bool enabled;
-  final Color focusColor;
-  final Color hoverColor;
+  final Color? focusColor;
+  final Color? hoverColor;
   final bool isThreeLine;
-  final Widget leading;
-  final Function onLongPress;
-  final Function onTap;
+  final Widget? leading;
+  final Function? onLongPress;
+  final Function? onTap;
   final bool selected;
-  final ShapeBorder shape;
-  final Widget subtitle;
-  final Widget title;
-  final Widget trailing;
-  final Color backgroundColor;
-  final Widget pushPage;
+  final ShapeBorder? shape;
+  final Widget? subtitle;
+  final Widget? title;
+  final Widget? trailing;
+  final Color? backgroundColor;
+  final Widget? pushPage;
 
   @override
   Widget build(BuildContext context) {
@@ -127,13 +128,13 @@ class NavigatingDrawerListItem extends StatelessWidget {
         hoverColor: hoverColor,
         isThreeLine: isThreeLine,
         leading: leading,
-        onLongPress: onLongPress,
+        onLongPress: onLongPress != null ? onLongPress!() : null,
         onTap: () {
           if (pushPage != null) {
             Navigator.of(context).push(
               PageRouteBuilder(
                 pageBuilder: (context, animation, secondaryAnimation) {
-                  return pushPage;
+                  return pushPage ?? Container();
                 },
                 transitionsBuilder:
                     (context, animation, secondaryAnimation, child) {
@@ -148,7 +149,7 @@ class NavigatingDrawerListItem extends StatelessWidget {
             );
           }
           if (onTap != null) {
-            onTap();
+            onTap!();
           }
         },
         selected: selected,
